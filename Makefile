@@ -63,7 +63,7 @@ re: clean all
 
 else
 
-$(TARGET).3gx: $(OFILES)
+$(OUTPUT).3gx: $(OFILES)
 
 .PRECIOUS: %.elf
 
