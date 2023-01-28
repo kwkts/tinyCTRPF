@@ -47,7 +47,7 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I $(CURDIR)/$(dir) ) \
 
 export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/lib)
 
-.PHONY: $(BUILD) clean all
+.PHONY: $(BUILD) clean all send
 
 all: $(BUILD)
 
@@ -55,9 +55,13 @@ $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $@ -f $(CURDIR)/Makefile
 
+#dammy for linux dist (?)
+send:
+	cp --force $(OUTPUT).3gx ~/.local/share/citra-emu/sdmc/luma/plugins/default.3gx
+
 clean:
 	@echo clean ... 
-	@rm -fr $(BUILD) # $(OUTPUT).3gx $(OUTPUT).elf
+	@rm -fr $(BUILD) $(OUTPUT).3gx $(OUTPUT).elf
 
 re: clean all
 
