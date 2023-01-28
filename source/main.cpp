@@ -1,5 +1,4 @@
 #include <CTRPluginFramework.hpp>
-#include "types.h"
 
 namespace CTRPluginFramework
 {
