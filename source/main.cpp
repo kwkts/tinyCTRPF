@@ -1,4 +1,18 @@
-int main()
+#include <CTRPluginFramework.hpp>
+#include "types.h"
+
+namespace CTRPluginFramework
 {
-    return 0;
+    int     main(void)
+    {
+        PluginMenu *menu = new PluginMenu("", 0, 0, 0, "");
+
+        menu->SynchronizeWithFrame(true);
+
+        menu->Run();
+
+        delete menu;
+
+        return (0);
+    }
 }
